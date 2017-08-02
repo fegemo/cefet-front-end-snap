@@ -1,34 +1,44 @@
-let regioesAnotadas = document.querySelectorAll('.marcacao');
+let marcacoes = document.querySelectorAll('.marcacao');
 let balaozinhoEl = document.querySelector('#balaozinho');
 
-regioesAnotadas.forEach(raEl => {
+marcacoes.forEach(marcacaoEl => {
 
-  raEl.addEventListener('mouseenter', e => {
-    let regiaoAnotadaEl = e.currentTarget;
-    balaozinhoEl.innerHTML = '<h2>' + regiaoAnotadaEl.dataset.titulo + '</h2>';
-    balaozinhoEl.innerHTML += '<p>' + regiaoAnotadaEl.dataset.conteudo + '</p>';
+  marcacaoEl.addEventListener('mouseenter', e => {
+    let marcacaoAtualEl = e.currentTarget;
+    balaozinhoEl.innerHTML = '<h2>' + marcacaoAtualEl.dataset.titulo + '</h2>';
+    balaozinhoEl.innerHTML += '<p>' + marcacaoAtualEl.dataset.conteudo + '</p>';
   });
 
-  raEl.addEventListener('mouseleave', e => {
+  marcacaoEl.addEventListener('mouseleave', e => {
     balaozinhoEl.innerHTML = '';
   });
 
-  raEl.addEventListener('mousemove', e => {
+  marcacaoEl.addEventListener('mousemove', e => {
     balaozinhoEl.style.left = e.pageX + 'px';
     balaozinhoEl.style.top = e.pageY + 'px';
   });
 });
 
-let botaoDefinirRegiaoEl = document.querySelector('#definir-regiao');
-botaoDefinirRegiaoEl.addEventListener('click', e => {
-  let x = document.querySelector('#balao-x').value;
-  let y = document.querySelector('#balao-y').value;
-  let largura = document.querySelector('#balao-largura').value;
-  let altura = document.querySelector('#balao-altura').value;
+let inputs = document.querySelectorAll('.controles input');
+inputs.forEach(inputEl => {
 
-  let regiao = regioesAnotadas[0];
-  regiao.style.left = x + 'px';
-  regiao.style.top = y + 'px';
-  regiao.style.width = largura + 'px';
-  regiao.style.height = altura + 'px';
+  inputEl.addEventListener('keyup', e => {
+    atualizaRegiao(marcacoes[0]);
+  });
+
+  inputEl.addEventListener('change', e => {
+    atualizaRegiao(marcacoes[0]);
+  });
 });
+
+function atualizaRegiao(marcacaoEl) {
+  let x = document.querySelector('#marcacao-x').value;
+  let y = document.querySelector('#marcacao-y').value;
+  let largura = document.querySelector('#marcacao-largura').value;
+  let altura = document.querySelector('#marcacao-altura').value;
+
+  marcacaoEl.style.left = x + 'px';
+  marcacaoEl.style.top = y + 'px';
+  marcacaoEl.style.width = largura + 'px';
+  marcacaoEl.style.height = altura + 'px';
+}
