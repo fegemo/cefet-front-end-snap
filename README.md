@@ -239,6 +239,17 @@ Por fim, na hora de atualizar a marcação, em vez de sempre pegar a primeira,
 pega a `$marcacaoAtual` e altera suas propriedades CSS de acordo com o que
 está nos `input`s.
 
+```js
+// inicialmente aponta para a primeira
+let $marcacaoAtual = $($marcacoes[0]);
+```
+...e, quando uma marcação é clicada (evento `click`), você altera o valor
+dessa variável para a devida `.marcacao`, usando `e.currentTarget`.
+
+Por fim, na hora de atualizar a marcação, em vez de sempre pegar a primeira,
+pega a `$marcacaoAtual` e altera suas propriedades CSS de acordo com o que
+está nos `input`s.
+
 Além disso, se quiser indicar visualmente qual
 é a marcação selecionada, faça com que ela (e apenas ela)
 tenha a classe `.selecionada`.
@@ -348,6 +359,10 @@ let $primeiraMarcacao = $marcacoes.first();
 [incluindo-biblioteca]: https://fegemo.github.io/cefet-front-end/classes/js6/#incluindo-a-biblioteca-jquery
 [eventos-jquery]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-atribuindo-eventos
 [jquery-alterar-html]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-funcionamento-basico
+<<<<<<< HEAD
 [jquery-css]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-estilizando-elementos
+=======
+[jquery-css]: http://localhost:8081/classes/js6/#jquery-estilizando-elementos
+>>>>>>> 2331427 (Changes statement to do it from scratch)
 [jquery-css-api]: https://api.jquery.com/css/#css2
 [jquery-first]: https://api.jquery.com/first/#first
