@@ -327,7 +327,8 @@ $('#logomca').click(tocaSom); // não faz nada, mas tb não dá erro
 ### Por quê usar `$($marcacoes[0])` em vez de simplesmente `$marcacoes[0]`?
 
 Quando acessamos o "i-ésimo" item de um **objeto jQuery**, o que é retornado
-é um elemento HTML (_vanilla JS_) que representa esse elemento. Ou seja, `$marcacoes[0]` não retorna um **objeto jQuery**, mas um elemento
+é um elemento HTML (_vanilla JS_) que representa esse elemento. Ou seja,
+`$marcacoes[0]` não retorna um **objeto jQuery**, mas um elemento
 HTML em _vanilla JS_.
 
 Caso você queira chamar métodos jQuery nesse elemento, precisamos fazer
@@ -350,6 +351,6 @@ let $primeiraMarcacao = $marcacoes.first();
 [incluindo-biblioteca]: https://fegemo.github.io/cefet-front-end/classes/js6/#incluindo-a-biblioteca-jquery
 [eventos-jquery]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-atribuindo-eventos
 [jquery-alterar-html]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-funcionamento-basico
-[jquery-css]: http://localhost:8081/classes/js6/#jquery-estilizando-elementos
+[jquery-css]: https://fegemo.github.io/cefet-front-end/classes/js6/#jquery-estilizando-elementos
 [jquery-css-api]: https://api.jquery.com/css/#css2
 [jquery-first]: https://api.jquery.com/first/#first
