@@ -45,16 +45,16 @@ for (let marcacaoEl of marcacoes) {
 };
 
 // permite o usuário mudar a posição/tamanho da primeira marcação
-let botaoDefinirRegiaoEl = document.querySelector('#definir-regiao');
+let botaoDefinirRegiaoEl = document.querySelector('#definir-marcacao');
 botaoDefinirRegiaoEl.addEventListener('click', function(e) {
   // pega os valores digitados para a nova posição/tamanho da marcação
   // EM JQUERY, usamos $elemento.val() para *pegar* o value de um input e o
   //            mesmo método para *definir* o valor, mas passando um parâmetro:
   //            $elemento.val(novoValor)
-  let x = document.querySelector('#balao-x').value;
-  let y = document.querySelector('#balao-y').value;
-  let largura = document.querySelector('#balao-largura').value;
-  let altura = document.querySelector('#balao-altura').value;
+  let x = document.querySelector('#marcacao-x').value;
+  let y = document.querySelector('#marcacao-y').value;
+  let largura = document.querySelector('#marcacao-largura').value;
+  let altura = document.querySelector('#marcacao-altura').value;
 
   let marcacaoEl = marcacoes[0];
   // define a nova posição/tamanho da marcação
