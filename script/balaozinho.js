@@ -3,13 +3,13 @@ let balaozinhoEl = document.querySelector('#balaozinho');
 
 marcacoes.forEach(marcacaoEl => {
 
-  marcacaoEl.addEventListener('mouseenter', e => {
+  marcacaoEl.addEventListener('mouseover', e => {
     let marcacaoAtualEl = e.currentTarget;
-    balaozinhoEl.innerHTML = '<h2>' + marcacaoAtualEl.dataset.titulo + '</h2>';
-    balaozinhoEl.innerHTML += '<p>' + marcacaoAtualEl.dataset.conteudo + '</p>';
+    balaozinhoEl.innerHTML = `<h2>${marcacaoAtualEl.dataset.titulo}</h2>`;
+    balaozinhoEl.innerHTML += `<p>${marcacaoAtualEl.dataset.conteudo}</p>`;
   });
 
-  marcacaoEl.addEventListener('mouseleave', e => {
+  marcacaoEl.addEventListener('mouseout', e => {
     balaozinhoEl.innerHTML = '';
   });
 
@@ -22,18 +22,13 @@ marcacoes.forEach(marcacaoEl => {
 let inputs = document.querySelectorAll('.controles input');
 inputs.forEach(inputEl => {
 
-  inputEl.addEventListener('keyup', e => {
-    let marcacaoAtualmenteSelecionada = document.querySelector('.marcacao.selecionada');
-    atualizaRegiao(marcacaoAtualmenteSelecionada);
-  });
-
-  inputEl.addEventListener('change', e => {
-    let marcacaoAtualmenteSelecionada = document.querySelector('.marcacao.selecionada');
-    atualizaRegiao(marcacaoAtualmenteSelecionada);
+  inputEl.addEventListener('input', e => {
+    let marcacaoAtualEl = document.querySelector('.marcacao.selecionada');
+    atualizaMarcacao(marcacaoAtualEl);
   });
 });
 
-function atualizaRegiao(marcacaoEl) {
+function atualizaMarcacao(marcacaoEl) {
   let x = document.querySelector('#marcacao-x').value;
   let y = document.querySelector('#marcacao-y').value;
   let largura = document.querySelector('#marcacao-largura').value;
@@ -48,8 +43,8 @@ function atualizaRegiao(marcacaoEl) {
 
 marcacoes.forEach(marcacaoEl => {
   marcacaoEl.addEventListener('click', e => {
-    let marcacaoAtualmenteSelecionada = document.querySelector('.marcacao.selecionada');
-    marcacaoAtualmenteSelecionada.classList.remove('selecionada');
+    let marcacaoAtualEl = document.querySelector('.marcacao.selecionada');
+    marcacaoAtualEl.classList.remove('selecionada');
     e.currentTarget.classList.add('selecionada');
   })
 });
