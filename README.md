@@ -1,6 +1,6 @@
 # P~~oké~~hotoSnap :camera: x2
 
-[Baixe os arquivos da prática aqui](https://github.com/fegemo/cefet-front-end-snap/archive/jquery.zip). Uma ferramenta para marcar suas fotos! Agora com **jQuery** =D
+Uma ferramenta para marcar suas fotos! Agora com **jQuery** =D
 
 ![](https://fegemo.github.io/cefet-front-end-large-assets/apng/resultado-final.png)
 
