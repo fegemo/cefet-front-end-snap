@@ -17,3 +17,15 @@ $marcacoes.on('mousemove', e => {
   $balaozinho.css('left', e.pageX + 'px');
   $balaozinho.css('top', e.pageY + 'px');
 });
+
+let $x = $('#marcacao-x');
+let $y = $('#marcacao-y');
+let $largura = $('#marcacao-largura');
+let $altura = $('#marcacao-altura');
+
+$('#definir-marcacao').click(() => {
+  $marcacoes.first().css('left', $x.val() + 'px');  
+  $marcacoes.first().css('top', $y.val() + 'px');  
+  $marcacoes.first().css('width', $largura.val() + 'px');  
+  $marcacoes.first().css('height', $altura.val() + 'px');  
+});
