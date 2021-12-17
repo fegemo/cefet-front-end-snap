@@ -23,7 +23,7 @@ let $y = $('#marcacao-y');
 let $largura = $('#marcacao-largura');
 let $altura = $('#marcacao-altura');
 
-$('#definir-marcacao').click(() => {
+$('.controles input').on('input', () => {
   $marcacoes.first().css('left', $x.val() + 'px');  
   $marcacoes.first().css('top', $y.val() + 'px');  
   $marcacoes.first().css('width', $largura.val() + 'px');  
