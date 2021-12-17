@@ -12,3 +12,8 @@ $marcacoes.on('mouseover', e => {
 $marcacoes.on('mouseout', e => {
   $balaozinho.html('');
 });
+
+$marcacoes.on('mousemove', e => {
+  $balaozinho.css('left', e.pageX + 'px');
+  $balaozinho.css('top', e.pageY + 'px');
+});
