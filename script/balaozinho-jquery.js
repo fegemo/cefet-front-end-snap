@@ -2,6 +2,7 @@
 //           lado a lado e vá "traduzindo" o código para usar jQuery
 let $marcacoes = $('.marcacao');
 let $balaozinho = $('#balaozinho');
+let $marcacaoSelecionada = $marcacoes.first();
 
 $marcacoes.on('mouseover', e => {
   let titulo = $(e.currentTarget).data('titulo');
@@ -18,14 +19,20 @@ $marcacoes.on('mousemove', e => {
   $balaozinho.css('top', e.pageY + 'px');
 });
 
+$marcacoes.on('click', e => {
+  $marcacaoSelecionada.removeClass('selecionada');
+  $marcacaoSelecionada = $(e.currentTarget);
+  $marcacaoSelecionada.addClass('selecionada');
+})
+
 let $x = $('#marcacao-x');
 let $y = $('#marcacao-y');
 let $largura = $('#marcacao-largura');
 let $altura = $('#marcacao-altura');
 
 $('.controles input').on('input', () => {
-  $marcacoes.first().css('left', $x.val() + 'px');  
-  $marcacoes.first().css('top', $y.val() + 'px');  
-  $marcacoes.first().css('width', $largura.val() + 'px');  
-  $marcacoes.first().css('height', $altura.val() + 'px');  
+  $marcacaoSelecionada.css('left', $x.val() + 'px');  
+  $marcacaoSelecionada.css('top', $y.val() + 'px');  
+  $marcacaoSelecionada.css('width', $largura.val() + 'px');  
+  $marcacaoSelecionada.css('height', $altura.val() + 'px');  
 });
