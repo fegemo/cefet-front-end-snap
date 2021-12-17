@@ -178,6 +178,8 @@ Faça com que, quando o mouse se movimente dentro de uma `.marcacao`
 coordenadas que o mouse. Veja como [pegar a posição do mouse][posicao-mouse]
 na documentação da biblioteca jQuery (veja os exemplos na página).
 
+Você deve definir as propriedades CSS `left` e `top` do balão. Para definir propriedades CSS usando jQuery, veja os [slides sobre isso][jquery-css].
+
 
 
 ### Exercício 5: Definição da 1ª marcação
