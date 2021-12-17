@@ -11,7 +11,7 @@ let balaozinhoEl = document.querySelector('#balaozinho');
 //            http://api.jquery.com/category/events/mouse-events/
 for (let marcacaoEl of marcacoes) {
 
-  marcacaoEl.addEventListener('mouseenter', function(e) {
+  marcacaoEl.addEventListener('mouseover', (e) => {
     let marcacaoAtualEl = e.currentTarget;
 
     // pega data-titulo="..." e data-conteudo="..." da marcação para colocar
@@ -26,16 +26,16 @@ for (let marcacaoEl of marcacoes) {
     //            com $elemento.html(novoConteudo)
     //            e podemos *pegar* o conteúdo chamando o mesmo método,
     //            mas sem passar parâmetros: $elemento.html() // retorna o cont.
-    balaozinhoEl.innerHTML = '<h2>' + titulo + '</h2>';
-    balaozinhoEl.innerHTML += '<p>' + conteudo + '</p>';
+    balaozinhoEl.innerHTML = `<h2>${titulo}</h2>`;
+    balaozinhoEl.innerHTML += `<p>${conteudo}</p>`;
   });
 
-  marcacaoEl.addEventListener('mouseleave', function(e) {
+  marcacaoEl.addEventListener('mouseout', (e) => {
     // limpa o conteúdo do balãozinho porque o mouse saiu da marcação
     balaozinhoEl.innerHTML = '';
   });
 
-  marcacaoEl.addEventListener('mousemove', function(e) {
+  marcacaoEl.addEventListener('mousemove', (e) => {
     // define a posição do balãozinho de acordo com a posição do mouse
     // EM JQUERY, definimos propriedades CSS dos elementos usando
     //            $elemento.css(nome, valor): http://api.jquery.com/css/
@@ -45,8 +45,8 @@ for (let marcacaoEl of marcacoes) {
 };
 
 // permite o usuário mudar a posição/tamanho da primeira marcação
-let botaoDefinirRegiaoEl = document.querySelector('#definir-marcacao');
-botaoDefinirRegiaoEl.addEventListener('click', function(e) {
+let botaoDefinirMarcacaoEl = document.querySelector('#definir-marcacao');
+botaoDefinirMarcacaoEl.addEventListener('click', (e) => {
   // pega os valores digitados para a nova posição/tamanho da marcação
   // EM JQUERY, usamos $elemento.val() para *pegar* o value de um input e o
   //            mesmo método para *definir* o valor, mas passando um parâmetro:
